@@ -1,0 +1,33 @@
+body {
+	background-color: orange;
+	font-family: 'Passion One', cursive;
+}
+
+div#container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+h1, p, form {
+	text-align: center;
+}
+
+p {
+	font-size: 1em;
+}
+
+div#singlecard {
+	width: 20%;
+	background-color: #efefef;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	margin-top: 2.5em;
+}
+
+div#cardOutput {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}

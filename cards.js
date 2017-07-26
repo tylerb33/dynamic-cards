@@ -3,33 +3,39 @@ console.log ("works");
 let finalOutput = document.getElementById("cardOutput");
 let createButton = document.getElementById("create");
 let userInput = document.getElementById("user-input");
-let removeCard = document.getElementById("deletecard");
 
+let cardArray = [];
 
 
 function produceCard() {
-	finalOutput.innerHTML +=  `<div id="singlecard">
+
+	let userInputText = userInput.value;
+	cardArray.push(userInputText);
+	let cardNumber = cardArray.length;
+	let cardStructure =  
+								`<div id="singlecard--${cardNumber}" class="cardStyling">
 									<header>
-										<h3>${userInput.value}!</h3>
+										<h2>${userInputText}!</h2>
 									</header>
 									<main>
-										<p>I hope you have a great birthday, man.</p>
+										<p>I hope you have a great birthday, ${userInputText}.</p>
 									</main>
-									<button type="button" id="deletecard">DELETE</button>
+									<button type="button" id="delete" class="deletecard">DELETE</button>
 							   </div>`
-};
+	
+	finalOutput.innerHTML += cardStructure;
+							
+							}
 
 
-function takeAwayCard() {
-	document.getElementById("cardOutput").remove(singlecard);
+
+function checkIfKill(event) {
+	let parentDiv = event.target.parentNode;
+	if (event.target.className === "deletecard") {
+		parentDiv.parentNode.removeChild(parentDiv);
+	}
 };
 
 
 createButton.addEventListener("click", produceCard);
-removeCard.addEventListener("click", takeAwayCard);
-
-	
-
-/*Things to figure out:
-1. how to be able to delete cards individually
-	1a. being able to target #deletecard without it actually being in the HTML */
+finalOutput.addEventListener("click", checkIfKill);

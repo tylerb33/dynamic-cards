@@ -16,7 +16,7 @@ p {
 	font-size: 1em;
 }
 
-div#singlecard {
+div.cardStyling {
 	width: 20%;
 	background-color: #efefef;
 	text-align: center;

@@ -30,8 +30,9 @@ function produceCard() {
 
 
 function checkIfKill(event) {
+	console.log(event);
 	let parentDiv = event.target.parentNode;
-	if (event.target.className === "deletecard") {
+	if (event.target.id === "delete") {
 		parentDiv.parentNode.removeChild(parentDiv);
 	}
 };
